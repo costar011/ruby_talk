@@ -2,6 +2,7 @@
 @import "./friends.css";
 @import "./message.css";
 @import "./profile.css";
+@import "./main.css";
 
 @media screen and (min-width: 450px) {
   .mobile__screen {
@@ -11,10 +12,9 @@
   .pc__screen {
     width: 100%;
     height: 100vh;
-    background: #4aabff;
-
+    background-color: #4aabff;
     color: #fff;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
 
     display: flex;
@@ -23,8 +23,8 @@
     justify-content: center;
   }
 
-  .pc__screen p {
-    text-shadow: 3px 3px 3px #000;
+  .screen p {
+    text-shadow: 3px 3px 3px black;
   }
 }
 
@@ -32,24 +32,24 @@
   .pc__screen {
     display: none;
   }
-
   .mobile__screen {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: flex-start;
+    align-items: center;
   }
-
+  .main {
+    width: 100%;
+  }
   .nav {
     position: fixed;
     bottom: 0px;
     left: 0px;
 
     width: 100%;
-    height: 60px;
+    height: 55px;
 
     border: 1px solid rgb(220, 220, 220);
-
     border-radius: 10px;
     box-shadow: -2px -2px 25px #999;
 

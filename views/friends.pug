@@ -1,20 +1,20 @@
 extends ./base.pug
+block content 
+    section.fhead 
+        div head 
+        div ICON 
 
-block content
-    section.fhead
-        div Friends 
-        div Icon  
+    section.fsearch 
+        form(action="#", method="get") 
+            input(type="text" placeholder="친구를 검색하세요.")
 
-    section.fsearch
-        form(action="#" method="get") 
-        input(type="text" placeholder="친구를 검색히세요.")
-
-    section.flist
+    section.flist 
         div.flist__friend
-            div  
+            div th
             div name 
-            div status_msg 
+            div status_msg
         div.flist__friend
-            div  
+            div th
             div name 
-            div status_msg   
+            div status_msg
+        
