@@ -5,6 +5,8 @@ dotenv.config();
 import bodyParser from "body-parser";
 import path from "path";
 import globalRouter from "../src/routers/globalRouter";
+import connect from "../db";
+
 const app = express();
 
 const PORT = process.env.PORT;
@@ -16,6 +18,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use("/", globalRouter);
+
+connect();
 
 app.listen(PORT, () => {
   console.log(`✅ ${PORT} server start`);
