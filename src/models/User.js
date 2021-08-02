@@ -1,34 +1,44 @@
 import mongoose from "mongoose";
 
-// 스키마 == 컬렉션 == 테이블 == 객체
-// Schema == Scheme 둘 다 같은 말
 const Schema = mongoose.Schema;
 
 const User = new Schema(
   {
     avatar: {
       type: String,
-      required: true,
+      requied: true,
     },
     nickname: {
       type: String,
-      required: true,
+      requied: true,
     },
     userId: {
       type: String,
-      required: true,
+      requied: true,
     },
     userPassword: {
       type: String,
-      required: true,
+      requied: true,
     },
     statusMessage: {
       type: String,
-      required: true,
+      requied: true,
     },
-    frineds: [
+    friends: [
       {
-        ref: "User", // User를 참조
+        ref: "User",
+        type: mongoose.Schema.Types.ObjectId,
+      },
+    ],
+    sMsgList: [
+      {
+        ref: "Message",
+        type: mongoose.Schema.Types.ObjectId,
+      },
+    ],
+    rMsgList: [
+      {
+        ref: "Message",
         type: mongoose.Schema.Types.ObjectId,
       },
     ],
@@ -38,4 +48,4 @@ const User = new Schema(
   }
 );
 
-export default mongoose.model("User", User, "User");
+export default mongoose.model(`User`, User, `User`);

@@ -1,14 +1,15 @@
-extends ./base.pug
-block content 
-    div.mainBox
-        h1.logo Rubu Talk
+extends base.pug
 
-        form(action="/login", method="post") 
+block content
+    div.mainBox
+        h1.logo Ruby Talk
+
+        form(action="/login" method="post")
             div.loginLabel
-                label ID 
-                input(type="text" name="input_id") 
+                label ID
+                input(type="text" name="input_id")
             div.loginLabel
                 label PASSWORD
-                input(type="password" name="input_pass") 
+                input(type="password" name="input_pass")
             input(type="submit" value="LOGIN")
             

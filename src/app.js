@@ -4,11 +4,11 @@ import dotenv from "dotenv";
 dotenv.config();
 import bodyParser from "body-parser";
 import path from "path";
-import globalRouter from "../src/routers/globalRouter";
-import connect from "../db";
+import globalRouter from "./routers/globalRouter";
+import connect from "../db/index";
+import expressSession from "express-session";
 
 const app = express();
-
 const PORT = process.env.PORT;
 
 app.set("view engine", "pug");
@@ -16,11 +16,19 @@ app.use(morgan(`dev`));
 app.use(express.static(path.join(__dirname, "/assets")));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(
+  expressSession({
+    secret: "@#@$MYSIGN#@$#$",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+connect();
 
 app.use("/", globalRouter);
 
-connect();
-
 app.listen(PORT, () => {
-  console.log(`✅ ${PORT} server start`);
+  console.log(
+    `💙 http://localhost:${PORT} ,  Ruby Talk Express Framework Server Start`
+  );
 });

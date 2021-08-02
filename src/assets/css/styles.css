@@ -1,5 +1,5 @@
 @import "./reset.css";
-@import "./friends.css";
+@import "./firends.css";
 @import "./message.css";
 @import "./profile.css";
 @import "./main.css";
@@ -12,9 +12,9 @@
   .pc__screen {
     width: 100%;
     height: 100vh;
-    background-color: #4aabff;
+    background: linear-gradient(rgb(21, 68, 238), rgb(63, 166, 226));
     color: #fff;
-    font-size: 30px;
+    font-size: 42px;
     font-weight: bold;
 
     display: flex;
@@ -23,8 +23,8 @@
     justify-content: center;
   }
 
-  .screen p {
-    text-shadow: 3px 3px 3px black;
+  .pc__screen p {
+    text-shadow: 3px 3px 3px #000;
   }
 }
 
@@ -32,22 +32,25 @@
   .pc__screen {
     display: none;
   }
+
   .mobile__screen {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
   }
+
   .main {
     width: 100%;
   }
+
   .nav {
     position: fixed;
     bottom: 0px;
     left: 0px;
 
     width: 100%;
-    height: 55px;
+    height: 60px;
 
     border: 1px solid rgb(220, 220, 220);
     border-radius: 10px;
